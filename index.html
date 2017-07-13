@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-commerce Example Application</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <br>
+            <nav id="top-navigation" class="well well-sm flex flex-row align-center">
+                <a href="#"><strong>E-commerce Inc.</strong></a>
+
+                <div class="text-right pull-right cart-info">
+                    <span class="stats">X items in cart, totalling $Y</span>
+                    <button class="btn btn-primary">View Cart</button>
+                </div>
+            </nav>
+
+            <div id="products" class="row list-group">
+                <div class="item col-xs-4">
+                    <div class="thumbnail">
+                        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff">
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading">[PRODUCT_NAME]</h4>
+                            <p class="group inner list-group-item-text">[PRODUCT_DESCRIPTION]</p>
+                            <br>
+
+                            <div class="row flex flex-row align-center">
+                                <div class="col-xs-4">
+                                    <p class="lead">[PRODUCT_PRICE]</p>
+                                </div>
+
+                                <div class="col-xs-8 flex flex-row align-center justify-right">
+                                    <div class="number-in-stock">
+                                        X in stock
+                                    </div>
+                                    <button class="btn btn-success">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.flex { display:flex }
+.flex.flex-column { flex-direction: column; }
+.flex.flex-row { flex-direction: row; }
+.flex.justify-center { justify-content: center; }
+.flex.justify-left { justify-content: flex-start; }
+.flex.justify-right { justify-content: flex-end; }
+.flex.align-center { align-items: center; }
+.flex.align-left { align-items: flex-start; }
+.flex.align-right { align-items: flex-end; }
+
+/* Navigation */
+#top-navigation a,
+#top-navigation .cart-info {
+    width: 100%;
+}
+
+#top-navigation .cart-info .stats { margin-right: 5px; }
+
+/* Products */
+#products .item img { background-color: #000; }
+#products .item p.lead { margin-bottom: 0; }
+#products .item .number-in-stock { margin-right: 10px; }
+#products .item .number-in-stock.few { color: #E0A14F; }
+#products .item .number-in-stock.none { color: #C45E5E; }
