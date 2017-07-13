@@ -49,7 +49,55 @@
 
             <div v-else>
                 <h1>Cart</h1>
-                <p>The cart will be displayed here.</p>
+
+                <table v-if="cart.items.length > 0" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr v-for="item in cart.items">
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.quantity * item.product.price | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right" colspan="2">
+                                <strong>Subtotal</strong>
+                            </td>
+
+                            <td>{{ cartTotal | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right" colspan="2">
+                                <strong>Taxes</strong>
+                            </td>
+
+                            <td>{{ taxAmount | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right" colspan="2">
+                                <strong>Grand total</strong>
+                            </td>
+
+                            <td>{{ cartTotal + taxAmount | currency }}</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"></td>
+                            <td><button class="btn btn-success">Checkout</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p v-else>Your cart is currently empty.</p>
             </div>
         </div>
     </div>

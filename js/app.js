@@ -69,6 +69,9 @@ new Vue({
             });
         
             return total;
+        },
+        taxAmount: function() {
+            return ((this.cartTotal * 10) / 100);
         }
     },
     filters: {
