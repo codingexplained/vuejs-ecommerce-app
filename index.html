@@ -21,24 +21,25 @@
             </nav>
 
             <div id="products" class="row list-group">
-                <div class="item col-xs-4">
+                <div v-for="product in products" class="item col-xs-4">
                     <div class="thumbnail">
                         <img class="group list-group-image" src="http://placehold.it/400x250/000/fff">
                         <div class="caption">
-                            <h4 class="group inner list-group-item-heading">[PRODUCT_NAME]</h4>
-                            <p class="group inner list-group-item-text">[PRODUCT_DESCRIPTION]</p>
+                            <h4 class="group inner list-group-item-heading">{{ product.name }}</h4>
+                            <p class="group inner list-group-item-text">{{ product.description }}</p>
                             <br>
 
                             <div class="row flex flex-row align-center">
                                 <div class="col-xs-4">
-                                    <p class="lead">[PRODUCT_PRICE]</p>
+                                    <p class="lead">{{ product.price | currency }}</p>
                                 </div>
 
                                 <div class="col-xs-8 flex flex-row align-center justify-right">
-                                    <div class="number-in-stock">
-                                        X in stock
+                                    <div class="number-in-stock" :class="{ few: product.inStock < 10 && product.inStock > 0, none: product.inStock == 0 }">
+                                        {{ product.inStock }} in stock
                                     </div>
-                                    <button class="btn btn-success">Add to cart</button>
+
+                                    <button class="btn btn-success" @click="addProductToCart(product)" :disabled="product.inStock == 0">Add to cart</button>
                                 </div>
                             </div>
                         </div>
